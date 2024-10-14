@@ -1,0 +1,131 @@
+:root {
+  --text-color: #fff;
+  --bg-color: #2a314d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--text-color);
+}
+
+.body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 40px 0;
+  background-color: #2a314d;
+}
+
+.header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 18px;
+  opacity: .9;
+  background: linear-gradient(0deg, #ffffff 0 33%, #0e4172 33% 66%, #c6363d 66% 100%);
+}
+
+.header__logo {
+  width: 254px;
+  aspect-ratio: 254 / 98;
+}
+
+.section {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.section__title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.section__title--offset-bottom {
+  margin-bottom: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 900px;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist__item {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+.checklist__item._active .checklist__trigger {
+  border-bottom: 1px solid #fff;
+}
+
+.checklist__item._active .checklist__content {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.checklist__item._active .checklist__icon {
+  transform: rotate(-180deg);
+}
+
+.checklist__trigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: sans-serif;
+  background-color: transparent;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.checklist__icon {
+  width: 20px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  transition: transform .2s ease-in-out;
+}
+
+.checklist__content {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  padding: 12px;
+  transition-property: opacity, visibility;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
