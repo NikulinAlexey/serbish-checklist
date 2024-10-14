@@ -9,8 +9,12 @@
   list-style-type: none;
 }
 
+*:focus {
+  outline: none;
+}
+
 *:focus-visible {
-  outline: 2px solid var(--text-color);
+  outline: 4px solid #000;
 }
 
 .body {
@@ -45,9 +49,14 @@
   background: linear-gradient(0deg, #ffffff 0 33%, #0e4172 33% 66%, #c6363d 66% 100%);
 }
 
-.header__logo {
+.logo {
   width: 254px;
   aspect-ratio: 254 / 98;
+}
+
+.logo__image {
+  width: 100%;
+  height: 100%;
 }
 
 .section {
@@ -103,6 +112,7 @@
 .checklist__trigger {
   cursor: pointer;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 12px;
   color: var(--text-color);
